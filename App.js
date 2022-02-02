@@ -6,7 +6,7 @@ const path = require('path');
 app.set('port',process.env.PORT || 3000);
 
 
-app.use((req,res)=>{
+app.use('/about',(req,res,next)=>{
     console.log("공통 실행")
     next(); //미들웨어는 next 를 해야만 다음 챕터로 넘어간다
 })

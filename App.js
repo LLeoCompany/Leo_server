@@ -7,7 +7,7 @@ app.set('port',process.env.PORT || 3000);
 
 
 app.use('/about',(req,res,next)=>{
-    console.log("공통 실행")
+    console.log("공통 실행")    
     next(); //미들웨어는 next 를 해야만 다음 챕터로 넘어간다
 })
 
@@ -23,6 +23,11 @@ app.post('/',(req,res)=>{
 
 app.get('/category/:name',(req,res)=>{
     res.send(`hello ${req.params.name}`);
+})
+
+//error 미들웨어는 생략하면 안됨 4개 다 필수
+app.use((err,req,res,next) => {
+    console.log("error....");
 })
 
 

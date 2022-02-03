@@ -1,4 +1,7 @@
 const express = require('express');
+const morgan = require('morgan'); 
+const cookieParser=require('cookie-parser');
+const session = require('express-session'); //개인의 저장공간 생성
 
 const app = express();
 const path = require('path');
@@ -6,15 +9,26 @@ const path = require('path');
 app.set('port',process.env.PORT || 3000);
 
 
+
+app.use(morgan('dev')); //클라이언트 요청 기록
+// app.use(morgan('combined'))// 배포시
+app.use('/',express.static(path.join(__dirname,'public'))); //
+app.use(session());
+app.use(cookieParser()); 
+
+
 app.use((req,res,next)=>{
-    console.log("공통 실행")    
+    console.log("공통 실행") 
+    req.cookies   
     next(); //미들웨어는 next 를 해야만 다음 챕터로 넘어간다
-},(req,res,next)=>{
-    throw new Error("에러 발생")
-})
+});
 
 app.get('/',(req,res)=>{
- res.sendFile(path.join(__dirname,'./index.html'));
+    // res.json({hello:'lim'});
+//  res.sendFile(path.join(__dirname,'./index.html'));
+// res.render()
+    req.session // 사용자에 대한 세션
+
 });
 app.post('/',(req,res)=>{
     res.send('hello world');

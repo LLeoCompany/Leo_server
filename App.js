@@ -1,7 +1,11 @@
 const express = require('express');
+const nunjucks = require('nunjucks')
 const morgan = require('morgan'); 
 const cookieParser=require('cookie-parser');
 const session = require('express-session'); //개인의 저장공간 생성
+
+
+const connect = require('./Schemas');
 
 const app = express();
 const path = require('path');

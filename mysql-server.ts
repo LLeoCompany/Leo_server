@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/", require("./app/mysql/route/route.js"));
+app.use("/", require("./src/app/mysql/route/route.ts"));
 
-const db = "/app/mysql/model/index.js";
-db.sequelizeConfig.sync();
+const dbb = require('./src/app/mysql/model/index.ts');
+dbb.sequelizeConfig.sync();
 
 app.get("/", (req, res) => {
   res.json({ message: `SERVER IS RUNING ON PORT${PORT}` });

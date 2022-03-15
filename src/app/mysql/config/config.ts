@@ -1,8 +1,15 @@
 module.exports = {
   host:'localhost',
   username:'root',
-  password:'1234',
-  db:
+  password:'sh6130lim',
+  db:'shop_db',
+  dialect:'mysql',
+  pool :{
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 }
 
 // host: MySQL IP (동일한 환경일 경우 localhost)

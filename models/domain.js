@@ -2,6 +2,7 @@
 //도메인 모델에는 인터넷주소,도메인종류,클라이언트 비밀키가 들어간다.
 const Sequelize=require('sequelize');
 
+
 module.exports=class Domain extends Sequelize.Model{
     static init(sequelize){
         return super.init({

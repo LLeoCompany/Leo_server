@@ -1,5 +1,4 @@
-//도메인 추가
-//도메인 모델에는 인터넷주소,도메인종류,클라이언트 비밀키가 들어간다.
+
 
 const Sequelize = require('sequelize');
 
@@ -14,10 +13,12 @@ module.exports = class Domain extends Sequelize.Model{
             type:{
                 type:Sequelize.ENUM('free','premium'),
                 allowNull:false,
+                //ENUM => 넣을수 있는 데이터값을 제한할수 있는 형식
             },
             clientSecret:{
                 type:Sequelize.UUID,
                 allowNull:false,
+               
                   },
 
         },{

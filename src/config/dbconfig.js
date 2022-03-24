@@ -4,7 +4,14 @@ const config = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "sh6130lim",
-  database: "leo_shop",
+  db: "leo_shop",
+  dialect: mysql,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
 });
 
-export default config;
+module.exports = config;

@@ -1,15 +1,12 @@
 const express = require("express");
-
 const app = express();
-
 const port = process.env.PORT || 8080;
+const cors = require("cors");
 
-const cors = require('cors');
+app.use(express.json());
 
-app.use("/api/data",function(req,res){
-    res.jsonp({greeting:'hello world'})
+app.get("/", (req, res) => {
+  res.json({ message: "ok" });
 });
-app.use(cors())
-app.get('/',(req,res) => res.send('hello world'));
 
-app.listen(port,()=>console.log(`port${port}`))
+app.listen(port, () => console.log(`port${port}`));

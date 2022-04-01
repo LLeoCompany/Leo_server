@@ -2,7 +2,7 @@
   "name": "leo_server",
   "version": "1.0.0",
   "description": "",
-  "main":"App.js",
+  "main":"App.js  ",
   "scripts": {
     "start": "nodemon app"
   },

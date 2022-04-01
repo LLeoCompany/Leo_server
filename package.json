@@ -2,8 +2,9 @@
   "name": "leo_server",
   "version": "1.0.0",
   "description": "",
+  "main":"App.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",

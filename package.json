@@ -32,7 +32,7 @@
     "mysql2": "^2.3.0",
     "nodemo": "^1.0.0",
     "nunjucks": "^3.2.3",
-    "passport": "^0.5.0",
+    "passport": "^0.5.2",
     "passport-kakao": "^1.0.1",
     "passport-local": "^1.0.0",
     "sequelize": "^6.15.0",

@@ -5,7 +5,7 @@ const config = require('../config/config.json')[env];
 
 const User = require('./user');
 const Post = require('./post');
-const Hashtag = require('/hashtag');
+const Hashtag = require('./hashtag');
 
 const db = {};
 

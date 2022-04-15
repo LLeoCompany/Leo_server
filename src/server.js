@@ -6,7 +6,7 @@ const app = express();
 const PORT = 4000;
 
 const gosipMiddleWare = (req,res,next) =>{
-    console.log(`middleware test  ${req.url}`);
+    console.log(`${req.method} ${req.url}`);
     next();
 }
 
@@ -20,7 +20,8 @@ const handleLogin = (req,res) => {
     return res.send("login auth")
 }
 
-app.get("/",gosipMiddleWare,Home)
+app.use(gosipMiddleWare);
+app.get("/",Home)
  
 app.get("/login",handleLogin)
 

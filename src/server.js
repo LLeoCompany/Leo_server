@@ -1,14 +1,16 @@
 import express from "express";
-
+import logger from "morgan";
 
 const app = express();
 
 const PORT = 4000;
 
-const logger = (req,res,next) =>{
-    console.log(`${req.method} ${req.url}`);
-    next();
-}
+const loggerMiddleWare = logger("dev");
+
+// const logger = (req,res,next) =>{
+//     console.log(`${req.method} ${req.url}`);
+//     next();
+// }
 
 const privateMiddleWare =(req,res,next)=>{
     if(req.url === "/private"){
@@ -32,8 +34,10 @@ const handleLogin = (req,res) => {
     return res.send("login auth")
 }
 
-app.use(privateMiddleWare);
-app.use(logger);
+
+app.use(loggerMiddleWare); 
+// app.use(privateMiddleWare);
+// app.use(logger);
 
 app.get("/",Home)
 app.get("/product",product )

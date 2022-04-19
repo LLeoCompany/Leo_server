@@ -11,6 +11,10 @@ const PORT = 4000;
 
 const loggerMiddleWare = logger("dev");
 
+//pug 사용
+app.set("view engine","pug")
+app.set("views",process.cwd() + "/src/views")
+
 
 app.use(loggerMiddleWare); 
 

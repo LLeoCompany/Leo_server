@@ -1,11 +1,12 @@
 import express from "express";
-import { edit, remove } from "../controllers/UserController";
+import { edit, logout, remove, see } from "../controllers/UserController";
 
 const uesrRouter =express.Router();
 
 
-
+uesrRouter.get("/:id",see);
+uesrRouter.get("/logout",logout);
 uesrRouter.get("/edit",edit);
-uesrRouter.get("/delete",remove)
+uesrRouter.get("/remove",remove)
 
 export default uesrRouter;

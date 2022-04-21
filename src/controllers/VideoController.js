@@ -5,7 +5,7 @@ export const trending = (req,res)=> {
 }
 
 export const see = (req,res)=>{
-    return res.send("VIDEO WATCH");
+    return res.render("watch");
 }
 
 export const edit = (req,res) =>{

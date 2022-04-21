@@ -1,7 +1,8 @@
-extends base.pug
-
-block head 
-    title Home | Webtube
-
-block content 
-    h1 watch
+mixin video(info)
+    div
+        h4=info.title
+        ul
+            li #{info.rating}/5.
+            li #{info.comments} comments.
+            li Posted #{info.createdAt}.
+            li #{info.views} views. 
